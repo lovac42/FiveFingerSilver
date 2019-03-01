@@ -2,7 +2,7 @@
 # Copyright: (C) 2019 Lovac42
 # Support: https://github.com/lovac42/FiveFingerSilver
 # License: GNU AGPL, version 3 or later; https://www.gnu.org/licenses/agpl.txt
-# Version: 0.0.1
+# Version: 0.0.2
 
 # Based on Anki 2.0.52 src
 # No difference with 2.1.8 src
@@ -14,6 +14,7 @@ from anki.hooks import wrap
 
 # From: anki.stats.CollectionStats
 # Mod: fixed learning stats for plan9/0/X
+# Mod2: separated relearn stats for sql
 def _eases(self, _old):
     lims = []
     lim = self._revlogLimit()
@@ -34,12 +35,14 @@ def _eases(self, _old):
         lim = ""
     return self.col.db.all("""
 select (case
-when type in (0,2) then 0
+when type = 0 then 0 
+when type = 2 then 3 
 when lastIvl < 21 then 1
 else 2 end) as thetype,
 ease, count() from revlog %s
 group by thetype, ease
 order by thetype, ease""" % lim)
+
 
 CollectionStats._eases=wrap(CollectionStats._eases, _eases, 'around')
 

@@ -1,1 +1,0 @@
-This addon is used to fix the answer button graph label and stats for rememorize and plan9/0/X
