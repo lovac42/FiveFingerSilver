@@ -2,7 +2,6 @@
 # Copyright: (C) 2019 Lovac42
 # Support: https://github.com/lovac42/FiveFingerSilver
 # License: GNU AGPL, version 3 or later; https://www.gnu.org/licenses/agpl.txt
-# Version: 0.0.2
 
 # Based on Anki 2.0.52 src
 # No difference with 2.1.8 src
@@ -22,6 +21,7 @@ def easeGraph(self, _old):
     d = {'lrn':[], 'yng':[], 'mtr':[], 'rel': []}
     types = ("lrn", "yng", "mtr", 'rel')
     eases = self._eases()
+    nonzero = False
     for (type, ease, cnt) in eases:
         if type == 1:
             ease += 5
