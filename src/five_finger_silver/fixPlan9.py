@@ -34,10 +34,10 @@ def _eases(self, _old):
         lim = ""
     return self.col.db.all("""
 select (case
-when type = 0 then 0 
-when type = 2 then 3 
-when lastIvl < 21 then 1
-else 2 end) as thetype,
+when type = 0 then 0         /* lrn */
+when type = 2 then 3         /* lapse */
+when lastIvl < 21 then 1     /* young */
+else 2 end) as thetype,      /* mature */
 ease, count() from revlog %s
 group by thetype, ease
 order by thetype, ease""" % lim)
