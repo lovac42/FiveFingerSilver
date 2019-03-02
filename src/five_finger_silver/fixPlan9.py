@@ -34,6 +34,7 @@ def _eases(self, _old):
         lim = ""
     return self.col.db.all("""
 select (case
+when type = 4 and lastIvl < 1 then 0  /* ReM new, can't filter lapse */
 when type = 0 then 0         /* lrn */
 when type = 2 then 3         /* lapse */
 when lastIvl < 21 then 1     /* young */

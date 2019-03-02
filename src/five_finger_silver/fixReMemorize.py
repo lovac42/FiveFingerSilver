@@ -17,7 +17,7 @@ TYPES=("lrn", "yng", "mtr", 'rel')
 TICKS=[[0,'ReM'],[1,1],[2,2],[3,3],[4,4], #lrn
        [5,'ReM'],[6,1],[7,2],[8,3],[9,4], #young
        [10,'ReM'],[11, 1],[12,2],[13,3],[14,4], #mature
-       [15,'ReM'],[16,1],[17,2],[18,3],[19,4]] #lapsed
+                  [16,1],[17,2],[18,3],[19,4]]  #lapsed
 
 
 # From: anki.stats.CollectionStats

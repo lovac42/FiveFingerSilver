@@ -11,18 +11,20 @@ from anki.stats import *
 from anki.hooks import wrap
 
 
+TYPES = {0: [0, 0], 1: [0, 0], 2: [0,0], 3: [0, 0]}
+
+
 # From: anki.stats.CollectionStats
 # Mod: added range and type 3
 def _easeInfo(self, eases, _old):
-    types = {0: [0, 0], 1: [0, 0], 2: [0,0], 3: [0, 0]}
     for (type, ease, cnt) in eases:
         if ease == 1:
-            types[type][0] += cnt
+            TYPES[type][0] += cnt
         else:
-            types[type][1] += cnt
+            TYPES[type][1] += cnt
     i = []
     for type in range(4):
-        (bad, good) = types[type]
+        (bad, good) = TYPES[type]
         tot = bad + good
         try:
             pct = good / float(tot) * 100
