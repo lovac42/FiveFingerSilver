@@ -11,6 +11,8 @@ Relearn Stats 1.0 C 2014-2015 by Teemu Pudas https://ankiweb.net/shared/info/199
 
 
 ## V1-V2 Logging Inconsistencies:
+### Update: This problem was fixed in the recent stable release v2.1.11 which auto updates the old button mappings in the review logs.
+
 For learning cards, in V1 there are 3 buttons, the good button is mapped to ease2. But in V2, hard button repeats, we have 4 grading buttons, and the good button is mapped to ease3. When generating stats, the good button on V1 is aligned to the hard button on V2. The easy btn on V1 is aligned to the good btn on V2.
 
 (Still with me?)
