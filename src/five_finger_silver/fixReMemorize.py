@@ -9,6 +9,7 @@
 
 from anki.stats import *
 from anki.hooks import wrap
+from anki.lang import _
 
 
 TYPES=("lrn", "yng", "mtr", 'rel')
