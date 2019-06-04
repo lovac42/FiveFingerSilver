@@ -12,3 +12,4 @@ quick_manifest.exe "Five Finger Silver" "2047355215" >%REPO%/manifest.json
 
 cd %REPO%
 %ZIP% ../%REPO%_21.ankiaddon *.*
+%ZIP% ../%REPO%_CCBC.adze *.*
