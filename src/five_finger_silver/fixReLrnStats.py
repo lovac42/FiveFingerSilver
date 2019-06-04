@@ -9,7 +9,7 @@
 
 from anki.stats import *
 from anki.hooks import wrap
-
+from anki.lang import _
 
 
 
