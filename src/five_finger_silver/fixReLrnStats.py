@@ -17,6 +17,8 @@ from anki.lang import _
 # Mod: added range and type 3
 def _easeInfo(self, eases, _old):
     TYPES = {0: [0, 0], 1: [0, 0], 2: [0,0], 3: [0, 0]}
+    #TODO: Rename TYPES, must not be global
+
     for (type, ease, cnt) in eases:
         if ease == 1:
             TYPES[type][0] += cnt
